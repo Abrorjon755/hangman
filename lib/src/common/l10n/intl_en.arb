@@ -1,5 +1,6 @@
 {
   "@@locale": "en",
   "hangman": "Hangman",
-  "level": "Level "
+  "level": "Level ",
+  "country": "Country"
 }

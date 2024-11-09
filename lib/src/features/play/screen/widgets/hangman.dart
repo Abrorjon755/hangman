@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 import '../../../../common/utils/context_extension.dart';
 
 class Hangman extends CustomPainter {
-  const Hangman({required this.context});
+  const Hangman({
+    required this.context,
+    required this.errorCount,
+  });
 
   final BuildContext context;
+  final int errorCount;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -56,6 +60,7 @@ class Hangman extends CustomPainter {
     // place
     const double rectWidth = 237;
     const double rectHeight = 60;
+    const double header = 20;
     final rect = Rect.fromLTWH(
       24,
       rectWidth,
@@ -84,7 +89,11 @@ class Hangman extends CustomPainter {
     );
     final rope3OffsetEnd = Offset(
       center.width,
-      center.height - headRadius * 2,
+      center.height - headRadius,
+    );
+    final headerOffset = Offset(
+      center.width,
+      center.height - header,
     );
 
     final Paint paint = Paint()
@@ -101,13 +110,24 @@ class Hangman extends CustomPainter {
     canvas.drawLine(ropeOffsetStart, ropeOffsetEnd, paint);
     canvas.drawLine(rope2OffsetStart, rope2OffsetEnd, paint);
     canvas.drawLine(rope3OffsetStart, rope3OffsetEnd, paint);
+    canvas.drawCircle(headerOffset, header, paint);
 
-    canvas.drawCircle(headOffset, headRadius, paint2);
-    canvas.drawLine(bodyOffsetStart, bodyOffsetEnd, paint2);
-    canvas.drawLine(legOffsetStart, leg1OffsetEnd, paint2);
-    canvas.drawLine(legOffsetStart, leg2OffsetEnd, paint2);
-    canvas.drawLine(handOffsetStart, hand1OffsetEnd, paint2);
-    canvas.drawLine(handOffsetStart, hand2OffsetEnd, paint2);
+    if (errorCount > 0) {
+      canvas.drawCircle(headOffset, headRadius, paint2);
+    }
+    if (errorCount > 1) {
+      canvas.drawLine(bodyOffsetStart, bodyOffsetEnd, paint2);
+    }
+    if (errorCount > 2) {
+      canvas.drawLine(legOffsetStart, leg1OffsetEnd, paint2);
+    }
+    if (errorCount > 3) {
+      canvas.drawLine(legOffsetStart, leg2OffsetEnd, paint2);
+    }
+    if (errorCount > 4) {
+      canvas.drawLine(handOffsetStart, hand1OffsetEnd, paint2);
+      canvas.drawLine(handOffsetStart, hand2OffsetEnd, paint2);
+    }
   }
 
   @override
