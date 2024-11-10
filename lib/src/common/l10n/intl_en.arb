@@ -2,5 +2,9 @@
   "@@locale": "en",
   "hangman": "Hangman",
   "level": "Level ",
-  "country": "Country"
+  "country": "Country",
+  "win": "You Won!",
+  "lose": "You Lose!",
+  "progress": "Progress",
+  "category": "Category"
 }

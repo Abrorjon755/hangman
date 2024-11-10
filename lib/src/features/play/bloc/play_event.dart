@@ -12,12 +12,20 @@ final class PickWord$PlayEvent extends PlayEvent {
 
 final class FoundLetter$PlayEvent extends PlayEvent {
   final String letter;
+  final BuildContext context;
 
-  const FoundLetter$PlayEvent(this.letter);
+  const FoundLetter$PlayEvent({
+    required this.letter,
+    required this.context,
+  });
 }
 
 final class ErrorLetter$PlayEvent extends PlayEvent {
   final String letter;
+  final BuildContext context;
 
-  const ErrorLetter$PlayEvent(this.letter);
+  const ErrorLetter$PlayEvent({
+    required this.letter,
+    required this.context,
+  });
 }

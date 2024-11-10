@@ -7,6 +7,7 @@ class PlayState extends Equatable {
   final String shownWord;
   final List<String> trueWords;
   final List<String> errorWords;
+  final bool isWin;
 
   const PlayState({
     this.status = Status.initial,
@@ -15,6 +16,7 @@ class PlayState extends Equatable {
     this.shownWord = '',
     this.trueWords = const <String>[],
     this.errorWords = const <String>[],
+    this.isWin = false,
   });
 
   @override
@@ -25,6 +27,7 @@ class PlayState extends Equatable {
         shownWord,
         trueWords,
         errorWords,
+        isWin,
       ];
 
   PlayState copyWith({
@@ -34,6 +37,7 @@ class PlayState extends Equatable {
     final String? shownWord,
     final List<String>? trueWords,
     final List<String>? errorWords,
+    final bool? isWin,
   }) =>
       PlayState(
         status: status ?? this.status,
@@ -42,5 +46,6 @@ class PlayState extends Equatable {
         shownWord: shownWord ?? this.shownWord,
         trueWords: trueWords ?? this.trueWords,
         errorWords: errorWords ?? this.errorWords,
+        isWin: isWin ?? this.isWin,
       );
 }

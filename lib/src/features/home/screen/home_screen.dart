@@ -105,7 +105,8 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
               child: InkWell(
-                onTap: () => context.push(AppRouter.play),
+                onTap: () =>
+                    context.go(AppRouter.loading, extra: AppRouter.play),
                 child: SizedBox.square(
                   dimension: 100,
                   child: Center(

@@ -9,9 +9,13 @@ class MyLetter extends StatelessWidget {
   const MyLetter({
     super.key,
     required this.letter,
+    required this.errorWords,
+    required this.trueWords,
   });
 
   final String letter;
+  final List<String> trueWords;
+  final List<String> errorWords;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +24,17 @@ class MyLetter extends StatelessWidget {
         onTap: () {
           if (context.read<PlayBloc>().state.word.contains(letter)) {
             context.read<PlayBloc>().add(
-                  FoundLetter$PlayEvent(letter),
+                  FoundLetter$PlayEvent(
+                    letter: letter,
+                    context: context,
+                  ),
                 );
           } else {
             context.read<PlayBloc>().add(
-                  ErrorLetter$PlayEvent(letter),
+                  ErrorLetter$PlayEvent(
+                    letter: letter,
+                    context: context,
+                  ),
                 );
           }
         },
@@ -34,6 +44,11 @@ class MyLetter extends StatelessWidget {
             letter,
             style: context.textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w900,
+              color: trueWords.contains(letter)
+                  ? Colors.green
+                  : errorWords.contains(letter)
+                      ? Colors.red
+                      : context.colors.onSecondaryContainer,
             ),
           ),
         ),

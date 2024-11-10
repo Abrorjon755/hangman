@@ -79,6 +79,46 @@ class S {
       args: [],
     );
   }
+
+  /// `You Won!`
+  String get win {
+    return Intl.message(
+      'You Won!',
+      name: 'win',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You Lose!`
+  String get lose {
+    return Intl.message(
+      'You Lose!',
+      name: 'lose',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Progress`
+  String get progress {
+    return Intl.message(
+      'Progress',
+      name: 'progress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category`
+  String get category {
+    return Intl.message(
+      'Category',
+      name: 'category',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

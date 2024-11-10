@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
 import '../../../common/models/word_model.dart';
 import '../../../common/service/level_words.dart';
@@ -29,7 +30,7 @@ class PlayBloc extends Bloc<PlayEvent, PlayState> {
             status: Status.success,
             word: chosen.word,
             category: chosen.category,
-            shownWord: '_' * chosen.word.length),
+            shownWord: ' ' * chosen.word.length),
       );
     } else {
       emit(
@@ -53,6 +54,14 @@ class PlayBloc extends Bloc<PlayEvent, PlayState> {
     }
     List<String> trueWords = state.trueWords.toList();
     trueWords.add(event.letter);
+    if (state.word == splited.join()) {
+      emit(state.copyWith(
+        status: Status.success,
+        shownWord: splited.join(),
+        trueWords: trueWords,
+        isWin: true,
+      ));
+    }
     emit(state.copyWith(
       status: Status.success,
       shownWord: splited.join(),
