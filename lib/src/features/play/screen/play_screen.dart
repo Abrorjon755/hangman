@@ -1,12 +1,15 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 import '../../../common/constants/constants.dart';
 import '../../../common/style/app_lotties.dart';
+import '../../../common/style/app_sounds.dart';
 import '../../../common/utils/context_extension.dart';
 import '../../../common/widgets/my_pattern_box.dart';
+import '../../home/screen/widgets/settings_dialog.dart';
 import '../bloc/play_bloc.dart';
 import 'widgets/hangman.dart';
 import 'widgets/lose_widget.dart';
@@ -21,6 +24,23 @@ class PlayScreen extends StatefulWidget {
 }
 
 class _PlayScreenState extends State<PlayScreen> {
+  void showSettingsDialog() {
+    playSound();
+    showDialog(
+      context: context,
+      builder: (context) => SettingsDialog(
+        toggleVolume: () async {
+          final bool volume =
+              context.dependency.shp.getBool(Constants.volume) ?? true;
+          await context.dependency.shp.setBool(Constants.volume, !volume);
+        },
+      ),
+    );
+  }
+  void playSound() {
+    context.dependency.player.play(AssetSource(AppSounds.tap));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,64 +51,61 @@ class _PlayScreenState extends State<PlayScreen> {
             Padding(
               padding: const EdgeInsets.all(24.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    children: [
-                      const SizedBox(height: 10),
-                      MyPatternBox(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 6,
-                          ),
-                          child: Text(
-                            context.lang.level +
-                                (context.dependency.shp
-                                            .getString(Constants.level) ??
-                                        '1')
-                                    .padLeft(2, "0"),
-                            style: context.textTheme.titleLarge?.copyWith(
-                              fontWeight: FontWeight.w700,
-                              color: context.colors.onSecondaryContainer,
-                            ),
+                  ZoomTapAnimation(
+                    onTap: playSound,
+                    child: MyPatternBox(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        child: Text(
+                          context.lang.level +
+                              (context.dependency.shp
+                                          .getString(Constants.level) ??
+                                      '1')
+                                  .padLeft(2, "0"),
+                          style: context.textTheme.titleLarge?.copyWith(
+                            fontWeight: FontWeight.w700,
+                            color: context.colors.onSecondaryContainer,
                           ),
                         ),
                       ),
-                    ],
+                    ),
                   ),
-                  Column(
-                    children: [
-                      MyPatternBox(
-                        child: SizedBox.square(
-                          dimension: 45,
-                          child: Center(
-                            child: FaIcon(
-                              FontAwesomeIcons.gear,
-                              color: context.colors.onSecondaryContainer,
-                              size: 25,
-                            ),
+                  const Spacer(),
+                  ZoomTapAnimation(
+                    onTap: playSound,
+                    child: MyPatternBox(
+                      child: SizedBox.square(
+                        dimension: 45,
+                        child: Center(
+                          child: FaIcon(
+                            FontAwesomeIcons.pause,
+                            color: context.colors.onSecondaryContainer,
+                            size: 25,
                           ),
                         ),
                       ),
-                      const SizedBox(height: 20),
-                      MyPatternBox(
-                        child: InkWell(
-                          onTap: () => context.pop(),
-                          child: SizedBox.square(
-                            dimension: 45,
-                            child: Center(
-                              child: FaIcon(
-                                FontAwesomeIcons.pause,
-                                color: context.colors.onSecondaryContainer,
-                                size: 25,
-                              ),
-                            ),
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+                  ZoomTapAnimation(
+                    onTap: showSettingsDialog,
+                    child: MyPatternBox(
+                      child: SizedBox.square(
+                        dimension: 45,
+                        child: Center(
+                          child: FaIcon(
+                            FontAwesomeIcons.gear,
+                            color: context.colors.onSecondaryContainer,
+                            size: 25,
                           ),
                         ),
                       ),
-                    ],
+                    ),
                   ),
                 ],
               ),
@@ -125,7 +142,25 @@ class _PlayScreenState extends State<PlayScreen> {
                                   child: SizedBox.square(
                                     dimension:
                                         constraints.biggest.height / 2 - 8,
-                                    child: Lottie.asset(AppLotties.happy),
+                                    child: state.errorWords.length >= 5
+                                        ? Padding(
+                                            padding: const EdgeInsets.all(28.0),
+                                            child: DecoratedBox(
+                                              decoration: BoxDecoration(
+                                                color: context
+                                                    .colors.secondaryFixed,
+                                                borderRadius:
+                                                    const BorderRadius.all(
+                                                  Radius.circular(50),
+                                                ),
+                                              ),
+                                              child: Lottie.asset(
+                                                AppLotties.dead,
+                                                repeat: false,
+                                              ),
+                                            ),
+                                          )
+                                        : Lottie.asset(AppLotties.happy),
                                   ),
                                 )
                               : const SizedBox(),
@@ -137,64 +172,71 @@ class _PlayScreenState extends State<PlayScreen> {
               ),
             ),
             const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                for (int i = 0; i < state.shownWord.length; i++)
-                  Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: Column(
-                      children: [
-                        DecoratedBox(
-                          decoration: BoxDecoration(
-                              color: context.colors.primary,
-                              borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  spreadRadius: 2,
-                                  blurRadius: 10,
-                                  color: context.colors.outline,
-                                ),
-                                BoxShadow(
-                                  spreadRadius: 1,
-                                  blurRadius: 5,
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxHeight: 110),
+              child: Center(
+                child: Wrap(
+                  direction: Axis.horizontal,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    for (int i = 0; i < state.shownWord.length; i++)
+                      Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            DecoratedBox(
+                              decoration: BoxDecoration(
                                   color: context.colors.primary,
-                                ),
-                              ]),
-                          child: SizedBox(
-                            width: 40,
-                            child: Center(
-                              child: Text(
-                                state.shownWord[i],
-                                style:
-                                    context.textTheme.headlineLarge?.copyWith(
-                                  fontWeight: FontWeight.w900,
-                                  color: context.colors.errorContainer,
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10),
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      spreadRadius: 2,
+                                      blurRadius: 10,
+                                      color: context.colors.outline,
+                                    ),
+                                    BoxShadow(
+                                      spreadRadius: 1,
+                                      blurRadius: 5,
+                                      color: context.colors.primary,
+                                    ),
+                                  ]),
+                              child: SizedBox(
+                                width: 32,
+                                child: Center(
+                                  child: Text(
+                                    state.shownWord[i],
+                                    style: context.textTheme.headlineLarge
+                                        ?.copyWith(
+                                      fontWeight: FontWeight.w900,
+                                      color: context.colors.errorContainer,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ),
-                        const MyPatternBox(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 4,
+                            const MyPatternBox(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 4,
+                                ),
+                                child: SizedBox(),
+                              ),
                             ),
-                            child: SizedBox(),
-                          ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
-              ],
+                      ),
+                  ],
+                ),
+              ),
             ),
             state.isWin
                 ? const WinWidget()
-                : state.errorWords.length >= state.word.length
+                : state.errorWords.length >= 5
                     ? LoseWidget(category: state.category)
                     : Expanded(
                         child: Column(
@@ -216,15 +258,19 @@ class _PlayScreenState extends State<PlayScreen> {
                                   const Expanded(child: SizedBox()),
                                   Expanded(
                                     flex: 2,
-                                    child: MyPatternBox(
-                                      child: SizedBox(
-                                        height: 50,
-                                        child: Center(
-                                          child: Text(
-                                            state.category,
-                                            style: context.textTheme.titleLarge
-                                                ?.copyWith(
-                                              fontWeight: FontWeight.w700,
+                                    child: ZoomTapAnimation(
+                                      onTap: playSound,
+                                      child: MyPatternBox(
+                                        child: SizedBox(
+                                          height: 50,
+                                          child: Center(
+                                            child: Text(
+                                              state.category,
+                                              style: context
+                                                  .textTheme.titleLarge
+                                                  ?.copyWith(
+                                                fontWeight: FontWeight.w700,
+                                              ),
                                             ),
                                           ),
                                         ),

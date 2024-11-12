@@ -2,8 +2,10 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
+import '../../../common/constants/constants.dart';
 import '../../../common/models/word_model.dart';
 import '../../../common/service/level_words.dart';
+import '../../../common/utils/context_extension.dart';
 import '../../../common/utils/status_enum.dart';
 
 part 'play_event.dart';
@@ -24,7 +26,7 @@ class PlayBloc extends Bloc<PlayEvent, PlayState> {
   void _pickWord(PickWord$PlayEvent event, Emitter<PlayState> emit) {
     emit(state.copyWith(status: Status.loading));
     if (wordModels.length > event.level) {
-      final WordModel chosen = wordModels[event.level];
+      final WordModel chosen = wordModels[event.level - 1];
       emit(
         state.copyWith(
             status: Status.success,
@@ -55,6 +57,9 @@ class PlayBloc extends Bloc<PlayEvent, PlayState> {
     List<String> trueWords = state.trueWords.toList();
     trueWords.add(event.letter);
     if (state.word == splited.join()) {
+      final int level = int.parse(
+          event.context.dependency.shp.getString(Constants.level) ?? '1');
+      event.context.dependency.shp.setString(Constants.level, "${level + 1}");
       emit(state.copyWith(
         status: Status.success,
         shownWord: splited.join(),

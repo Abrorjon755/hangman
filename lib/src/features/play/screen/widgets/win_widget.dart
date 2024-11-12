@@ -1,10 +1,13 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 import '../../../../common/constants/constants.dart';
 import '../../../../common/router/app_router.dart';
 import '../../../../common/service/level_words.dart';
+import '../../../../common/style/app_sounds.dart';
 import '../../../../common/utils/context_extension.dart';
 import '../../../../common/widgets/my_pattern_box.dart';
 
@@ -14,16 +17,18 @@ class WinWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
+      flex: 3,
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 24,
-          vertical: 16,
+          vertical: 8,
         ),
         child: MyPatternBox(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const SizedBox(height: 15),
+              const SizedBox(height: 10),
               Text(
                 context.lang.win,
                 style: context.textTheme.headlineLarge
@@ -37,7 +42,7 @@ class WinWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 18,
-                  vertical: 8,
+                  vertical: 6,
                 ),
                 child: DecoratedBox(
                   decoration: BoxDecoration(
@@ -62,8 +67,11 @@ class WinWidget extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          (context.dependency.shp.getString(Constants.level) ??
-                                  '1')
+                          (int.parse(context.dependency.shp
+                                          .getString(Constants.level) ??
+                                      '1') -
+                                  1)
+                              .toString()
                               .padLeft(2, "0"),
                           style: context.textTheme.titleLarge?.copyWith(
                             fontWeight: FontWeight.w700,
@@ -78,7 +86,7 @@ class WinWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 18,
-                  vertical: 8,
+                  vertical: 6,
                 ),
                 child: DecoratedBox(
                   decoration: BoxDecoration(
@@ -103,7 +111,7 @@ class WinWidget extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "${(int.parse(context.dependency.shp.getString(Constants.level) ?? "1") / wordModels.length * 100).toStringAsFixed(2)}%",
+                          "${((int.parse(context.dependency.shp.getString(Constants.level) ?? "1") - 1) / wordModels.length * 100).toStringAsFixed(2)}%",
                           style: context.textTheme.titleLarge?.copyWith(
                             fontWeight: FontWeight.w700,
                             color: context.colors.onPrimary,
@@ -114,19 +122,24 @@ class WinWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(
+              ConstrainedBox(
+                constraints: const BoxConstraints(maxHeight: 80),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 24,
-                    vertical: 20,
+                    vertical: 12,
                   ),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Expanded(
-                        child: InkWell(
-                          onTap: () => context.go(AppRouter.loading,
-                              extra: AppRouter.home),
+                        child: ZoomTapAnimation(
+                          onTap: () {
+                            context.dependency.player
+                                .play(AssetSource(AppSounds.tap));
+                            context.go(AppRouter.loading,
+                                extra: AppRouter.home);
+                          },
                           child: MyPatternBox(
                             child: Center(
                               child: FaIcon(
@@ -140,9 +153,13 @@ class WinWidget extends StatelessWidget {
                       ),
                       const SizedBox(width: 20),
                       Expanded(
-                        child: InkWell(
-                          onTap: () => context.go(AppRouter.loading,
-                              extra: AppRouter.play),
+                        child: ZoomTapAnimation(
+                          onTap: () {
+                            context.dependency.player
+                                .play(AssetSource(AppSounds.tap));
+                            context.go(AppRouter.loading,
+                                extra: AppRouter.play);
+                          },
                           child: MyPatternBox(
                             child: Center(
                               child: FaIcon(

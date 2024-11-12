@@ -1,6 +1,9 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
+import '../../../../common/style/app_sounds.dart';
 import '../../../../common/utils/context_extension.dart';
 import '../../../../common/widgets/my_pattern_box.dart';
 import '../../bloc/play_bloc.dart';
@@ -19,25 +22,26 @@ class MyLetter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MyPatternBox(
-      child: InkWell(
-        onTap: () {
-          if (context.read<PlayBloc>().state.word.contains(letter)) {
-            context.read<PlayBloc>().add(
-                  FoundLetter$PlayEvent(
-                    letter: letter,
-                    context: context,
-                  ),
-                );
-          } else {
-            context.read<PlayBloc>().add(
-                  ErrorLetter$PlayEvent(
-                    letter: letter,
-                    context: context,
-                  ),
-                );
-          }
-        },
+    return ZoomTapAnimation(
+      onTap: () {
+        context.dependency.player.play(AssetSource(AppSounds.tap));
+        if (context.read<PlayBloc>().state.word.contains(letter)) {
+          context.read<PlayBloc>().add(
+                FoundLetter$PlayEvent(
+                  letter: letter,
+                  context: context,
+                ),
+              );
+        } else {
+          context.read<PlayBloc>().add(
+                ErrorLetter$PlayEvent(
+                  letter: letter,
+                  context: context,
+                ),
+              );
+        }
+      },
+      child: MyPatternBox(
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           child: Text(

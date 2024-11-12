@@ -1,14 +1,52 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 import '../../../common/constants/constants.dart';
 import '../../../common/router/app_router.dart';
+import '../../../common/style/app_sounds.dart';
 import '../../../common/utils/context_extension.dart';
 import '../../../common/widgets/my_pattern_box.dart';
+import 'widgets/settings_dialog.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late final ValueNotifier<bool> isVolumeOn;
+
+  Future<void> toggleVolume() async {
+    playSound();
+    final bool volume =
+        context.dependency.shp.getBool(Constants.volume) ?? true;
+    isVolumeOn.value = !volume;
+    await context.dependency.shp.setBool(Constants.volume, !volume);
+  }
+
+  void playSound() {
+    context.dependency.player.play(AssetSource(AppSounds.tap));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    if (context.mounted) {
+      isVolumeOn = ValueNotifier(
+          context.dependency.shp.getBool(Constants.volume) ?? true);
+    }
+  }
+
+  @override
+  void dispose() {
+    isVolumeOn.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,20 +63,23 @@ class HomeScreen extends StatelessWidget {
                 Column(
                   children: [
                     const SizedBox(height: 10),
-                    MyPatternBox(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 6,
-                        ),
-                        child: Text(
-                          context.lang.level +
-                              (context.dependency.shp
-                                      .getString(Constants.level) ??
-                                  '01'),
-                          style: context.textTheme.titleLarge?.copyWith(
-                            fontWeight: FontWeight.w700,
-                            color: context.colors.onSecondaryContainer,
+                    ZoomTapAnimation(
+                      onTap: playSound,
+                      child: MyPatternBox(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 6,
+                          ),
+                          child: Text(
+                            context.lang.level +
+                                (context.dependency.shp
+                                        .getString(Constants.level) ??
+                                    '01'),
+                            style: context.textTheme.titleLarge?.copyWith(
+                              fontWeight: FontWeight.w700,
+                              color: context.colors.onSecondaryContainer,
+                            ),
                           ),
                         ),
                       ),
@@ -47,27 +88,47 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    MyPatternBox(
-                      child: SizedBox.square(
-                        dimension: 45,
-                        child: Center(
-                          child: FaIcon(
-                            FontAwesomeIcons.gear,
-                            color: context.colors.onSecondaryContainer,
-                            size: 25,
+                    ZoomTapAnimation(
+                      onTap: () {
+                        playSound();
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              SettingsDialog(toggleVolume: toggleVolume),
+                        );
+                      },
+                      child: MyPatternBox(
+                        child: SizedBox.square(
+                          dimension: 45,
+                          child: Center(
+                            child: FaIcon(
+                              FontAwesomeIcons.gear,
+                              color: context.colors.onSecondaryContainer,
+                              size: 25,
+                            ),
                           ),
                         ),
                       ),
                     ),
                     const SizedBox(height: 20),
-                    MyPatternBox(
-                      child: SizedBox.square(
-                        dimension: 45,
-                        child: Center(
-                          child: FaIcon(
-                            FontAwesomeIcons.volumeHigh,
-                            color: context.colors.onSecondaryContainer,
-                            size: 25,
+                    ValueListenableBuilder(
+                      valueListenable: isVolumeOn,
+                      builder:
+                          (BuildContext context, bool value, Widget? child) =>
+                              ZoomTapAnimation(
+                        onTap: toggleVolume,
+                        child: MyPatternBox(
+                          child: SizedBox.square(
+                            dimension: 45,
+                            child: Center(
+                              child: FaIcon(
+                                value
+                                    ? FontAwesomeIcons.volumeHigh
+                                    : FontAwesomeIcons.volumeXmark,
+                                color: context.colors.onSecondaryContainer,
+                                size: 25,
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -85,28 +146,30 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 100),
-            DecoratedBox(
-              decoration: BoxDecoration(
-                color: context.colors.primaryContainer,
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(100),
+            ZoomTapAnimation(
+              onTap: () {
+                playSound();
+                context.go(AppRouter.loading, extra: AppRouter.play);
+              },
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: context.colors.primaryContainer,
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(100),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      spreadRadius: 10,
+                      blurRadius: 50,
+                      color: context.colors.outline,
+                    ),
+                    BoxShadow(
+                      spreadRadius: 5,
+                      blurRadius: 25,
+                      color: context.colors.primary,
+                    ),
+                  ],
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    spreadRadius: 10,
-                    blurRadius: 50,
-                    color: context.colors.outline,
-                  ),
-                  BoxShadow(
-                    spreadRadius: 5,
-                    blurRadius: 25,
-                    color: context.colors.primary,
-                  ),
-                ],
-              ),
-              child: InkWell(
-                onTap: () =>
-                    context.go(AppRouter.loading, extra: AppRouter.play),
                 child: SizedBox.square(
                   dimension: 100,
                   child: Center(
@@ -122,14 +185,17 @@ class HomeScreen extends StatelessWidget {
             const Spacer(),
             Row(
               children: [
-                MyPatternBox(
-                  child: SizedBox.square(
-                    dimension: 50,
-                    child: Center(
-                      child: FaIcon(
-                        FontAwesomeIcons.bars,
-                        color: context.colors.onSecondaryContainer,
-                        size: 25,
+                ZoomTapAnimation(
+                  onTap: playSound,
+                  child: MyPatternBox(
+                    child: SizedBox.square(
+                      dimension: 50,
+                      child: Center(
+                        child: FaIcon(
+                          FontAwesomeIcons.bars,
+                          color: context.colors.onSecondaryContainer,
+                          size: 25,
+                        ),
                       ),
                     ),
                   ),

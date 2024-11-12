@@ -6,5 +6,9 @@
   "win": "You Won!",
   "lose": "You Lose!",
   "progress": "Progress",
-  "category": "Category"
+  "category": "Category",
+  "nextLevel": "Next Level",
+  "settings": "Settings",
+  "sound": "Sound",
+  "music": "Music"
 }

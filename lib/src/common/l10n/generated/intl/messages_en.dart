@@ -27,7 +27,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "hangman": MessageLookupByLibrary.simpleMessage("Hangman"),
         "level": MessageLookupByLibrary.simpleMessage("Level "),
         "lose": MessageLookupByLibrary.simpleMessage("You Lose!"),
+        "music": MessageLookupByLibrary.simpleMessage("Music"),
+        "nextLevel": MessageLookupByLibrary.simpleMessage("Next Level"),
         "progress": MessageLookupByLibrary.simpleMessage("Progress"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "sound": MessageLookupByLibrary.simpleMessage("Sound"),
         "win": MessageLookupByLibrary.simpleMessage("You Won!")
       };
 }
