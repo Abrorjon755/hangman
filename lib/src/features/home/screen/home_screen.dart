@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
@@ -6,7 +5,6 @@ import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 import '../../../common/constants/constants.dart';
 import '../../../common/router/app_router.dart';
-import '../../../common/style/app_sounds.dart';
 import '../../../common/utils/context_extension.dart';
 import '../../../common/widgets/my_pattern_box.dart';
 import 'widgets/settings_dialog.dart';
@@ -22,15 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
   late final ValueNotifier<bool> isVolumeOn;
 
   Future<void> toggleVolume() async {
-    playSound();
     final bool volume =
         context.dependency.shp.getBool(Constants.volume) ?? true;
     isVolumeOn.value = !volume;
     await context.dependency.shp.setBool(Constants.volume, !volume);
-  }
-
-  void playSound() {
-    context.dependency.player.play(AssetSource(AppSounds.tap));
   }
 
   @override
@@ -64,7 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     const SizedBox(height: 10),
                     ZoomTapAnimation(
-                      onTap: playSound,
                       child: MyPatternBox(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
@@ -90,7 +82,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     ZoomTapAnimation(
                       onTap: () {
-                        playSound();
                         showDialog(
                           context: context,
                           builder: (context) =>
@@ -148,7 +139,6 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 100),
             ZoomTapAnimation(
               onTap: () {
-                playSound();
                 context.go(AppRouter.loading, extra: AppRouter.play);
               },
               child: DecoratedBox(
@@ -181,26 +171,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-            ),
-            const Spacer(),
-            Row(
-              children: [
-                ZoomTapAnimation(
-                  onTap: playSound,
-                  child: MyPatternBox(
-                    child: SizedBox.square(
-                      dimension: 50,
-                      child: Center(
-                        child: FaIcon(
-                          FontAwesomeIcons.bars,
-                          color: context.colors.onSecondaryContainer,
-                          size: 25,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
             ),
           ],
         ),

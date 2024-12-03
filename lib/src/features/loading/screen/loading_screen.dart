@@ -20,7 +20,7 @@ class LoadingScreen extends StatefulWidget {
 class _LoadingScreenState extends State<LoadingScreen> {
   void go(BuildContext context) async {
     await Future.delayed(
-      const Duration(milliseconds: 1700),
+      const Duration(milliseconds: 1650),
     );
     if (context.mounted) {
       context.go(widget.route);

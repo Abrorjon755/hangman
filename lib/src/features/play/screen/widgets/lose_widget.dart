@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
@@ -6,7 +5,6 @@ import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 import '../../../../common/constants/constants.dart';
 import '../../../../common/router/app_router.dart';
-import '../../../../common/style/app_sounds.dart';
 import '../../../../common/utils/context_extension.dart';
 import '../../../../common/widgets/my_pattern_box.dart';
 
@@ -133,8 +131,6 @@ class LoseWidget extends StatelessWidget {
                       Expanded(
                         child: ZoomTapAnimation(
                           onTap: () {
-                            context.dependency.player
-                                .play(AssetSource(AppSounds.tap));
                             context.go(AppRouter.loading,
                                 extra: AppRouter.home);
                           },
@@ -153,8 +149,6 @@ class LoseWidget extends StatelessWidget {
                       Expanded(
                         child: ZoomTapAnimation(
                           onTap: () {
-                            context.dependency.player
-                                .play(AssetSource(AppSounds.tap));
                             context.go(AppRouter.loading,
                                 extra: AppRouter.play);
                           },

@@ -1,11 +1,9 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 import '../../../../common/constants/constants.dart';
-import '../../../../common/style/app_sounds.dart';
 import '../../../../common/utils/context_extension.dart';
 import '../../../../common/widgets/my_pattern_box.dart';
 
@@ -65,11 +63,7 @@ class _SettingsDialogState extends State<SettingsDialog> {
                     PopScope(
                       canPop: false,
                       child: ZoomTapAnimation(
-                        onTap: () {
-                          context.dependency.player
-                              .play(AssetSource(AppSounds.tap));
-                          context.pop();
-                        },
+                        onTap: () => context.pop(),
                         child: CircleAvatar(
                           radius: 15,
                           backgroundColor: context.colors.primary,
@@ -157,13 +151,12 @@ class _SettingsDialogState extends State<SettingsDialog> {
                                 Switch(
                           value: value,
                           onChanged: (v) {
-                            context.dependency.player
-                                .play(AssetSource(AppSounds.tap));
                             musicOn.value = v;
                           },
                           overlayColor: WidgetStateColor.transparent,
                           thumbColor: WidgetStatePropertyAll(
-                              context.colors.onSecondary),
+                            context.colors.onSecondary,
+                          ),
                           inactiveThumbColor: context.colors.outline,
                           activeColor: context.colors.primary,
                           trackColor:

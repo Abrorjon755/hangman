@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fullscreen_window/fullscreen_window.dart';
@@ -26,14 +25,10 @@ class InitializeApp {
     bool theme = shp.getBool(Constants.theme) ?? true;
     String locale = shp.getString(Constants.locale) ?? "en";
 
-    // Audio Player
-    final player = AudioPlayer();
-
     return AppDependency(
       shp: shp,
       locale: locale,
       theme: theme,
-      player: player,
     );
   }
 }
