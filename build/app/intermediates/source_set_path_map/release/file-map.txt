@@ -28,6 +28,5 @@ dev.abrorjon755.hangman.app-packageReleaseResources-26 C:\Users\abror\StudioProj
 dev.abrorjon755.hangman.app-packageReleaseResources-27 C:\Users\abror\StudioProjects\hangman\build\app\intermediates\incremental\release\packageReleaseResources\stripped.dir
 dev.abrorjon755.hangman.app-merged-not-compiled-resources-28 C:\Users\abror\StudioProjects\hangman\build\app\intermediates\merged-not-compiled-resources\release
 dev.abrorjon755.hangman.app-merged_res-29 C:\Users\abror\StudioProjects\hangman\build\app\intermediates\merged_res\release
-dev.abrorjon755.hangman.app-packaged_res-30 C:\Users\abror\StudioProjects\hangman\build\audioplayers_android\intermediates\packaged_res\release
-dev.abrorjon755.hangman.app-packaged_res-31 C:\Users\abror\StudioProjects\hangman\build\path_provider_android\intermediates\packaged_res\release
-dev.abrorjon755.hangman.app-packaged_res-32 C:\Users\abror\StudioProjects\hangman\build\shared_preferences_android\intermediates\packaged_res\release
+dev.abrorjon755.hangman.app-packaged_res-30 C:\Users\abror\StudioProjects\hangman\build\flutter_native_splash\intermediates\packaged_res\release
+dev.abrorjon755.hangman.app-packaged_res-31 C:\Users\abror\StudioProjects\hangman\build\shared_preferences_android\intermediates\packaged_res\release

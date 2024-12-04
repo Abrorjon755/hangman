@@ -41,7 +41,7 @@
         android:enableOnBackInvokedCallback="true"
         android:extractNativeLibs="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="hangman"
+        android:label="Hangman - Puzzle Game"
         android:usesCleartextTraffic="true" >
         <activity
             android:name="dev.abrorjon755.hangman.MainActivity"

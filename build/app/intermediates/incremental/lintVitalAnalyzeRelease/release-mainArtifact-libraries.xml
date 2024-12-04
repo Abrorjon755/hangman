@@ -4,23 +4,10 @@
       jars="C:\Users\abror\StudioProjects\hangman\build\app\intermediates\flutter\release\libs.jar"
       resolved="__local_aars__:C:\Users\abror\StudioProjects\hangman\build\app\intermediates\flutter\release\libs.jar:unspecified"/>
   <library
-      name="C:\Users\abror\StudioProjects\hangman\android@@:audioplayers_android::release"
-      jars="C:\Users\abror\StudioProjects\hangman\build\audioplayers_android\.transforms\125dbf48535c6f75360767b118c86bf9\transformed\out\jars\classes.jar;C:\Users\abror\StudioProjects\hangman\build\audioplayers_android\.transforms\125dbf48535c6f75360767b118c86bf9\transformed\out\jars\libs\R.jar"
-      resolved="xyz.luan.audioplayers:audioplayers_android:unspecified"
-      folder="C:\Users\abror\StudioProjects\hangman\build\audioplayers_android\.transforms\125dbf48535c6f75360767b118c86bf9\transformed\out"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="C:\Users\abror\StudioProjects\hangman\android@@:path_provider_android::release"
-      jars="C:\Users\abror\StudioProjects\hangman\build\path_provider_android\.transforms\baf31eef7f8853c00a58075e438b0ba6\transformed\out\jars\classes.jar;C:\Users\abror\StudioProjects\hangman\build\path_provider_android\.transforms\baf31eef7f8853c00a58075e438b0ba6\transformed\out\jars\libs\R.jar"
-      resolved="io.flutter.plugins.pathprovider:path_provider_android:unspecified"
-      folder="C:\Users\abror\StudioProjects\hangman\build\path_provider_android\.transforms\baf31eef7f8853c00a58075e438b0ba6\transformed\out"
+      name="C:\Users\abror\StudioProjects\hangman\android@@:flutter_native_splash::release"
+      jars="C:\Users\abror\StudioProjects\hangman\build\flutter_native_splash\.transforms\e357e55a4b5246e3222d46079e980077\transformed\out\jars\classes.jar;C:\Users\abror\StudioProjects\hangman\build\flutter_native_splash\.transforms\e357e55a4b5246e3222d46079e980077\transformed\out\jars\libs\R.jar"
+      resolved="net.jonhanson.flutter_native_splash:flutter_native_splash:unspecified"
+      folder="C:\Users\abror\StudioProjects\hangman\build\flutter_native_splash\.transforms\e357e55a4b5246e3222d46079e980077\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -334,9 +321,9 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.annotation:annotation-jvm:1.8.2@jar"
-      jars="C:\Users\abror\.gradle\caches\modules-2\files-2.1\androidx.annotation\annotation-jvm\1.8.2\b8a16fe526014b7941c1debaccaf9c5153692dbb\annotation-jvm-1.8.2.jar"
-      resolved="androidx.annotation:annotation-jvm:1.8.2"/>
+      name="androidx.annotation:annotation-jvm:1.8.0@jar"
+      jars="C:\Users\abror\.gradle\caches\modules-2\files-2.1\androidx.annotation\annotation-jvm\1.8.0\b8a16fe526014b7941c1debaccaf9c5153692dbb\annotation-jvm-1.8.0.jar"
+      resolved="androidx.annotation:annotation-jvm:1.8.0"/>
   <library
       name="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22@jar"
       jars="C:\Users\abror\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.8.22\4dabb8248310d833bb6a8b516024a91fd3d275c\kotlin-stdlib-jdk7-1.8.22.jar"

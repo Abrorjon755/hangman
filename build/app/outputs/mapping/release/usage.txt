@@ -4640,6 +4640,7 @@ io.flutter.embedding.engine.dart.DartExecutor$DartCallback
 io.flutter.embedding.engine.dart.DartExecutor$DefaultBinaryMessenger:
     public void disableBufferingIncomingMessages()
     public void enableBufferingIncomingMessages()
+    public void send(java.lang.String,java.nio.ByteBuffer)
 io.flutter.embedding.engine.dart.DartExecutor:
     private static final java.lang.String TAG
     public void disableBufferingIncomingMessages()
@@ -4649,12 +4650,14 @@ io.flutter.embedding.engine.dart.DartExecutor:
     public io.flutter.plugin.common.BinaryMessenger getBinaryMessenger()
     public java.lang.String getIsolateServiceId()
     public int getPendingChannelResponseCount()
+    public void send(java.lang.String,java.nio.ByteBuffer)
     public void setIsolateServiceIdListener(io.flutter.embedding.engine.dart.DartExecutor$IsolateServiceIdListener)
 io.flutter.embedding.engine.dart.DartMessenger:
     private static final java.lang.String TAG
     public void disableBufferingIncomingMessages()
     public void enableBufferingIncomingMessages()
     public int getPendingChannelResponseCount()
+    public void send(java.lang.String,java.nio.ByteBuffer)
 io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager:
     public abstract void loadAssets(int,java.lang.String)
     public abstract void loadDartLibrary(int,java.lang.String)
@@ -4861,15 +4864,21 @@ io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions:
 io.flutter.plugin.common.BinaryMessenger:
     public void disableBufferingIncomingMessages()
     public void enableBufferingIncomingMessages()
+    public abstract void send(java.lang.String,java.nio.ByteBuffer)
 io.flutter.plugin.common.ErrorLogResult
-io.flutter.plugin.common.EventChannel:
-    private static final java.lang.String TAG
+io.flutter.plugin.common.EventChannel$1
+io.flutter.plugin.common.EventChannel$EventSink
+io.flutter.plugin.common.EventChannel$IncomingStreamRequestHandler$EventSinkImplementation
+io.flutter.plugin.common.EventChannel$IncomingStreamRequestHandler
+io.flutter.plugin.common.EventChannel$StreamHandler
+io.flutter.plugin.common.EventChannel
 io.flutter.plugin.common.FlutterException:
     private static final java.lang.String TAG
 io.flutter.plugin.common.JSONUtil:
     private void <init>()
     public static java.lang.Object unwrap(java.lang.Object)
 io.flutter.plugin.common.MethodCall:
+    public java.lang.Object argument(java.lang.String)
     public boolean hasArgument(java.lang.String)
 io.flutter.plugin.common.MethodChannel:
     private static final java.lang.String TAG
@@ -4970,14 +4979,6 @@ io.flutter.plugin.platform.VirtualDisplayController:
 io.flutter.plugin.text.ProcessTextPlugin:
     private static final java.lang.String TAG
     public void destroy()
-io.flutter.plugins.pathprovider.Messages$FlutterError:
-    public void <init>(java.lang.String,java.lang.String,java.lang.Object)
-io.flutter.plugins.pathprovider.Messages:
-    public void <init>()
-io.flutter.plugins.pathprovider.PathProviderPlugin:
-    static final java.lang.String TAG
-io.flutter.plugins.pathprovider.R
-io.flutter.plugins.pathprovider.StorageDirectoryMapper
 io.flutter.plugins.sharedpreferences.LegacySharedPreferencesPlugin:
     private static final java.lang.String BIG_INTEGER_PREFIX
     private static final java.lang.String DOUBLE_PREFIX
@@ -7544,6 +7545,7 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     private static final java.lang.Object firstNotNullOfOrNull(java.lang.Iterable,kotlin.jvm.functions.Function1)
     public static final java.lang.Object firstOrNull(java.lang.Iterable)
     public static final java.lang.Object firstOrNull(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object firstOrNull(java.util.List)
     public static final java.util.List flatMap(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final java.util.List flatMapIndexedIterable(java.lang.Iterable,kotlin.jvm.functions.Function2)
     private static final java.util.Collection flatMapIndexedIterableTo(java.lang.Iterable,java.util.Collection,kotlin.jvm.functions.Function2)
@@ -7574,6 +7576,7 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     public static final java.util.Set intersect(java.lang.Iterable,java.lang.Iterable)
     public static final java.lang.Object last(java.lang.Iterable)
     public static final java.lang.Object last(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object last(java.util.List)
     public static final java.lang.Object last(java.util.List,kotlin.jvm.functions.Function1)
     public static final int lastIndexOf(java.lang.Iterable,java.lang.Object)
     public static final int lastIndexOf(java.util.List,java.lang.Object)
@@ -7669,6 +7672,7 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     public static final java.lang.Object single(java.lang.Iterable,kotlin.jvm.functions.Function1)
     public static final java.lang.Object singleOrNull(java.lang.Iterable)
     public static final java.lang.Object singleOrNull(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object singleOrNull(java.util.List)
     public static final java.util.List slice(java.util.List,java.lang.Iterable)
     public static final java.util.List slice(java.util.List,kotlin.ranges.IntRange)
     public static final void sortBy(java.util.List,kotlin.jvm.functions.Function1)
@@ -7795,6 +7799,7 @@ kotlin.collections.MapsKt__MapsKt:
     public static final java.lang.Object getOrPut(java.util.Map,java.lang.Object,kotlin.jvm.functions.Function0)
     public static final java.lang.Object getValue(java.util.Map,java.lang.Object)
     private static final java.util.HashMap hashMapOf()
+    public static final varargs java.util.HashMap hashMapOf(kotlin.Pair[])
     private static final java.lang.Object ifEmpty(java.util.Map,kotlin.jvm.functions.Function0)
     private static final boolean isNotEmpty(java.util.Map)
     private static final boolean isNullOrEmpty(java.util.Map)
@@ -7821,6 +7826,7 @@ kotlin.collections.MapsKt__MapsKt:
     private static final java.util.Map orEmpty(java.util.Map)
     public static final java.util.Map plus(java.util.Map,java.lang.Iterable)
     public static final java.util.Map plus(java.util.Map,java.util.Map)
+    public static final java.util.Map plus(java.util.Map,kotlin.Pair)
     public static final java.util.Map plus(java.util.Map,kotlin.sequences.Sequence)
     public static final java.util.Map plus(java.util.Map,kotlin.Pair[])
     private static final void plusAssign(java.util.Map,java.lang.Iterable)
@@ -7829,6 +7835,7 @@ kotlin.collections.MapsKt__MapsKt:
     private static final void plusAssign(java.util.Map,kotlin.sequences.Sequence)
     private static final void plusAssign(java.util.Map,kotlin.Pair[])
     public static final void putAll(java.util.Map,kotlin.sequences.Sequence)
+    public static final void putAll(java.util.Map,kotlin.Pair[])
     private static final java.lang.Object remove(java.util.Map,java.lang.Object)
     private static final void set(java.util.Map,java.lang.Object,java.lang.Object)
     public static final java.util.Map toMap(java.util.Map)
@@ -8070,6 +8077,7 @@ kotlin.coroutines.jvm.internal.Boxing:
     public static final java.lang.Byte boxByte(byte)
     public static final java.lang.Character boxChar(char)
     public static final java.lang.Float boxFloat(float)
+    public static final java.lang.Integer boxInt(int)
     public static final java.lang.Short boxShort(short)
 kotlin.coroutines.jvm.internal.DebugMetadata:
     public abstract int[] i()
@@ -8592,6 +8600,7 @@ kotlin.jvm.internal.TypeIntrinsics:
     public static java.util.List asMutableList(java.lang.Object,java.lang.String)
     public static java.util.ListIterator asMutableListIterator(java.lang.Object)
     public static java.util.ListIterator asMutableListIterator(java.lang.Object,java.lang.String)
+    public static java.util.Map asMutableMap(java.lang.Object)
     public static java.util.Map asMutableMap(java.lang.Object,java.lang.String)
     public static java.util.Map$Entry asMutableMapEntry(java.lang.Object)
     public static java.util.Map$Entry asMutableMapEntry(java.lang.Object,java.lang.String)
@@ -8603,6 +8612,7 @@ kotlin.jvm.internal.TypeIntrinsics:
     public static java.util.Iterator castToIterator(java.lang.Object)
     public static java.util.List castToList(java.lang.Object)
     public static java.util.ListIterator castToListIterator(java.lang.Object)
+    public static java.util.Map castToMap(java.lang.Object)
     public static java.util.Map$Entry castToMapEntry(java.lang.Object)
     public static java.util.Set castToSet(java.lang.Object)
     public static boolean isMutableCollection(java.lang.Object)
@@ -8620,12 +8630,14 @@ kotlin.jvm.internal.TypeReference$Companion
 kotlin.jvm.internal.TypeReference$WhenMappings
 kotlin.jvm.internal.TypeReference$asString$args$1
 kotlin.jvm.internal.TypeReference
+kotlin.jvm.internal.markers.KMappedMarker
 kotlin.jvm.internal.markers.KMutableCollection
 kotlin.jvm.internal.markers.KMutableIterable
 kotlin.jvm.internal.markers.KMutableIterator
 kotlin.jvm.internal.markers.KMutableList
 kotlin.jvm.internal.markers.KMutableListIterator
 kotlin.jvm.internal.markers.KMutableMap$Entry
+kotlin.jvm.internal.markers.KMutableMap
 kotlin.jvm.internal.markers.KMutableSet
 kotlin.jvm.internal.unsafe.MonitorKt
 kotlin.jvm.jdk8.JvmRepeatableKt
@@ -9076,6 +9088,7 @@ kotlin.sequences.SequencesKt___SequencesJvmKt:
     private static final java.math.BigInteger sumOfBigInteger(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     public static final java.util.SortedSet toSortedSet(kotlin.sequences.Sequence)
     public static final java.util.SortedSet toSortedSet(kotlin.sequences.Sequence,java.util.Comparator)
+kotlin.sequences.SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1
 kotlin.sequences.SequencesKt___SequencesKt$distinct$1
 kotlin.sequences.SequencesKt___SequencesKt$elementAt$1
 kotlin.sequences.SequencesKt___SequencesKt$filterIndexed$1
@@ -9112,6 +9125,7 @@ kotlin.sequences.SequencesKt___SequencesKt:
     public static final boolean all(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     public static final boolean any(kotlin.sequences.Sequence)
     public static final boolean any(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
+    public static final java.lang.Iterable asIterable(kotlin.sequences.Sequence)
     private static final kotlin.sequences.Sequence asSequence(kotlin.sequences.Sequence)
     public static final java.util.Map associate(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     public static final java.util.Map associateBy(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
@@ -9383,42 +9397,14 @@ kotlin.text.MatcherMatchResult$groupValues$1
 kotlin.text.MatcherMatchResult$groups$1$iterator$1
 kotlin.text.MatcherMatchResult$groups$1
 kotlin.text.MatcherMatchResult
-kotlin.text.Regex$Companion:
-    public static final synthetic int access$ensureUnicodeCase(kotlin.text.Regex$Companion,int)
-    private final int ensureUnicodeCase(int)
-    public final java.lang.String escape(java.lang.String)
-    public final java.lang.String escapeReplacement(java.lang.String)
-    public final kotlin.text.Regex fromLiteral(java.lang.String)
+kotlin.text.Regex$Companion
 kotlin.text.Regex$Serialized$Companion
 kotlin.text.Regex$Serialized
 kotlin.text.Regex$findAll$1
 kotlin.text.Regex$findAll$2
 kotlin.text.Regex$special$$inlined$fromInt$1
 kotlin.text.Regex$splitToSequence$1
-kotlin.text.Regex:
-    private java.util.Set _options
-    public void <init>(java.lang.String,java.util.Set)
-    public void <init>(java.lang.String,kotlin.text.RegexOption)
-    public static final synthetic java.util.regex.Pattern access$getNativePattern$p(kotlin.text.Regex)
-    public final boolean containsMatchIn(java.lang.CharSequence)
-    public final kotlin.text.MatchResult find(java.lang.CharSequence,int)
-    public static synthetic kotlin.text.MatchResult find$default(kotlin.text.Regex,java.lang.CharSequence,int,int,java.lang.Object)
-    public final kotlin.sequences.Sequence findAll(java.lang.CharSequence,int)
-    public static synthetic kotlin.sequences.Sequence findAll$default(kotlin.text.Regex,java.lang.CharSequence,int,int,java.lang.Object)
-    public final java.util.Set getOptions()
-    public final java.lang.String getPattern()
-    public final kotlin.text.MatchResult matchAt(java.lang.CharSequence,int)
-    public final kotlin.text.MatchResult matchEntire(java.lang.CharSequence)
-    public final boolean matches(java.lang.CharSequence)
-    public final boolean matchesAt(java.lang.CharSequence,int)
-    public final java.lang.String replace(java.lang.CharSequence,kotlin.jvm.functions.Function1)
-    public final java.lang.String replaceFirst(java.lang.CharSequence,java.lang.String)
-    public final java.util.List split(java.lang.CharSequence,int)
-    public static synthetic java.util.List split$default(kotlin.text.Regex,java.lang.CharSequence,int,int,java.lang.Object)
-    public final kotlin.sequences.Sequence splitToSequence(java.lang.CharSequence,int)
-    public static synthetic kotlin.sequences.Sequence splitToSequence$default(kotlin.text.Regex,java.lang.CharSequence,int,int,java.lang.Object)
-    public final java.util.regex.Pattern toPattern()
-    private final java.lang.Object writeReplace()
+kotlin.text.Regex
 kotlin.text.RegexKt$fromInt$1$1
 kotlin.text.RegexKt
 kotlin.text.RegexOption
@@ -9627,6 +9613,7 @@ kotlin.text.StringsKt__StringsJVMKt:
     private static final java.lang.String uppercase(java.lang.String)
     private static final java.lang.String uppercase(java.lang.String,java.util.Locale)
 kotlin.text.StringsKt__StringsKt$iterator$1
+kotlin.text.StringsKt__StringsKt$rangesDelimitedBy$1
 kotlin.text.StringsKt__StringsKt$splitToSequence$2
 kotlin.text.StringsKt__StringsKt:
     public void <init>()
@@ -9674,7 +9661,10 @@ kotlin.text.StringsKt__StringsKt:
     public static final java.lang.String padStart(java.lang.String,int,char)
     public static synthetic java.lang.CharSequence padStart$default(java.lang.CharSequence,int,char,int,java.lang.Object)
     public static synthetic java.lang.String padStart$default(java.lang.String,int,char,int,java.lang.Object)
+    private static final kotlin.sequences.Sequence rangesDelimitedBy$StringsKt__StringsKt(java.lang.CharSequence,char[],int,boolean,int)
+    static synthetic kotlin.sequences.Sequence rangesDelimitedBy$StringsKt__StringsKt$default(java.lang.CharSequence,char[],int,boolean,int,int,java.lang.Object)
     public static final java.lang.CharSequence removePrefix(java.lang.CharSequence,java.lang.CharSequence)
+    public static final java.lang.String removePrefix(java.lang.String,java.lang.CharSequence)
     public static final java.lang.CharSequence removeRange(java.lang.CharSequence,int,int)
     public static final java.lang.CharSequence removeRange(java.lang.CharSequence,kotlin.ranges.IntRange)
     private static final java.lang.String removeRange(java.lang.String,int,int)
@@ -9711,8 +9701,11 @@ kotlin.text.StringsKt__StringsKt:
     private static final java.lang.String replaceRange(java.lang.String,int,int,java.lang.CharSequence)
     private static final java.lang.String replaceRange(java.lang.String,kotlin.ranges.IntRange,java.lang.CharSequence)
     private static final java.util.List split(java.lang.CharSequence,kotlin.text.Regex,int)
+    public static final java.util.List split(java.lang.CharSequence,char[],boolean,int)
     public static final java.util.List split(java.lang.CharSequence,java.lang.String[],boolean,int)
+    private static final java.util.List split$StringsKt__StringsKt(java.lang.CharSequence,java.lang.String,boolean,int)
     static synthetic java.util.List split$default(java.lang.CharSequence,kotlin.text.Regex,int,int,java.lang.Object)
+    public static synthetic java.util.List split$default(java.lang.CharSequence,char[],boolean,int,int,java.lang.Object)
     public static synthetic java.util.List split$default(java.lang.CharSequence,java.lang.String[],boolean,int,int,java.lang.Object)
     private static final kotlin.sequences.Sequence splitToSequence(java.lang.CharSequence,kotlin.text.Regex,int)
     public static final kotlin.sequences.Sequence splitToSequence(java.lang.CharSequence,char[],boolean,int)
@@ -9720,8 +9713,10 @@ kotlin.text.StringsKt__StringsKt:
     public static synthetic kotlin.sequences.Sequence splitToSequence$default(java.lang.CharSequence,char[],boolean,int,int,java.lang.Object)
     public static final boolean startsWith(java.lang.CharSequence,char,boolean)
     public static final boolean startsWith(java.lang.CharSequence,java.lang.CharSequence,int,boolean)
+    public static final boolean startsWith(java.lang.CharSequence,java.lang.CharSequence,boolean)
     public static synthetic boolean startsWith$default(java.lang.CharSequence,char,boolean,int,java.lang.Object)
     public static synthetic boolean startsWith$default(java.lang.CharSequence,java.lang.CharSequence,int,boolean,int,java.lang.Object)
+    public static synthetic boolean startsWith$default(java.lang.CharSequence,java.lang.CharSequence,boolean,int,java.lang.Object)
     public static final java.lang.CharSequence subSequence(java.lang.CharSequence,kotlin.ranges.IntRange)
     private static final java.lang.CharSequence subSequence(java.lang.String,int,int)
     private static final java.lang.String substring(java.lang.CharSequence,int,int)
@@ -11817,6 +11812,7 @@ kotlinx.coroutines.sync.SemaphoreSegment:
     public final java.lang.Object getAndSet(int,java.lang.Object)
     public final void set(int,java.lang.Object)
 kotlinx.coroutines.time.TimeKt
+net.jonhanson.flutter_native_splash.R
 org.intellij.lang.annotations.Flow
 org.intellij.lang.annotations.Identifier
 org.intellij.lang.annotations.JdkConstants$AdjustableOrientation
@@ -11874,43 +11870,6 @@ org.jetbrains.annotations.UnknownNullability
 org.jetbrains.annotations.Unmodifiable
 org.jetbrains.annotations.UnmodifiableView
 org.jetbrains.annotations.VisibleForTesting
-xyz.luan.audioplayers.AudioContextAndroid:
-    public final boolean component1()
-    public final boolean component2()
-    public final int component3()
-    public final int component4()
-    public final int component5()
-    public final int component6()
-    public final int getContentType()
-    public final int getUsageType()
-xyz.luan.audioplayers.AudioplayersPluginKt:
-    private static final synthetic java.lang.Enum enumArgument(io.flutter.plugin.common.MethodCall,java.lang.String)
-xyz.luan.audioplayers.R
-xyz.luan.audioplayers.player.SoundPoolPlayerKt
-xyz.luan.audioplayers.player.WrappedPlayer:
-    public final float getBalance()
-    public final xyz.luan.audioplayers.PlayerMode getPlayerMode()
-    public final xyz.luan.audioplayers.ReleaseMode getReleaseMode()
-    public final boolean getReleased()
-    public final int getShouldSeekTo()
-    public final xyz.luan.audioplayers.source.Source getSource()
-    public final void setContext(xyz.luan.audioplayers.AudioContextAndroid)
-    public final void setPlaying(boolean)
-    public final void setReleased(boolean)
-    public final void setShouldSeekTo(int)
-xyz.luan.audioplayers.player.WrappedPlayerKt
-xyz.luan.audioplayers.source.BytesSource:
-    public final xyz.luan.audioplayers.ByteDataSource component1()
-    public final xyz.luan.audioplayers.source.BytesSource copy(xyz.luan.audioplayers.ByteDataSource)
-    public static synthetic xyz.luan.audioplayers.source.BytesSource copy$default(xyz.luan.audioplayers.source.BytesSource,xyz.luan.audioplayers.ByteDataSource,int,java.lang.Object)
-    public final xyz.luan.audioplayers.ByteDataSource getDataSource()
-xyz.luan.audioplayers.source.UrlSource:
-    public final java.lang.String component1()
-    public final boolean component2()
-    public final xyz.luan.audioplayers.source.UrlSource copy(java.lang.String,boolean)
-    public static synthetic xyz.luan.audioplayers.source.UrlSource copy$default(xyz.luan.audioplayers.source.UrlSource,java.lang.String,boolean,int,java.lang.Object)
-    public final java.lang.String getUrl()
-    public final boolean isLocal()
 _COROUTINE.CoroutineDebuggingKt:
     public static final java.lang.String getARTIFICIAL_FRAME_PACKAGE_NAME()
 androidx.activity.OnBackPressedDispatcher
@@ -12312,8 +12271,6 @@ io.flutter.plugin.platform.VirtualDisplayController:
     public static io.flutter.plugin.platform.VirtualDisplayController create(android.content.Context,io.flutter.plugin.platform.AccessibilityEventsDelegate,io.flutter.plugin.platform.PlatformView,io.flutter.plugin.platform.PlatformViewRenderTarget,int,int,int,java.lang.Object,android.view.View$OnFocusChangeListener)
     public void dispose()
     private void resize31(android.view.View,int,int,java.lang.Runnable)
-io.flutter.plugins.pathprovider.Messages$$InternalSyntheticThrowCCEIfNotNull$7$834a600a3aabf0c5aeafefbfa6b64d968fb0f9e1b061abdf5d70c0e5a8e42173$0
-io.flutter.plugins.pathprovider.Messages$FlutterError
 io.flutter.plugins.sharedpreferences.Messages$$InternalSyntheticThrowCCEIfNotNull$7$424317060c5c3a586288f3b0e6e3d95be82898df742b9234c441817d12ff16f1$0
 io.flutter.plugins.sharedpreferences.Messages$FlutterError
 io.flutter.plugins.sharedpreferences.MessagesAsync_gKt$$InternalSyntheticThrowCCEIfNotNull$7$80eb479ae981532e4af872e552558f8e3c33f83c55e6f8f61ab55b63f1f3c1d6$0
@@ -12345,7 +12302,6 @@ kotlin.collections.SetsKt
 kotlin.collections.SetsKt___SetsKt
 kotlin.coroutines.jvm.internal.CoroutineStackFrame:
     public abstract java.lang.StackTraceElement getStackTraceElement()
-kotlin.jvm.internal.markers.KMutableMap
 kotlin.ranges.RangesKt:
     public static synthetic bridge long coerceAtLeast(long,long)
 kotlin.ranges.RangesKt___RangesKt:
@@ -12492,7 +12448,3 @@ kotlinx.coroutines.selects.SelectInstance:
 kotlinx.coroutines.selects.TrySelectDetailedResult
 kotlinx.coroutines.sync.SemaphoreImpl$$InternalSyntheticThrowCCEIfNotNull$7$7d9e7f6bad90bd63c05b35b370839b47b89d26b5be40dbf80ff6edfd82cbffaa$0
 kotlinx.coroutines.sync.SemaphoreImpl$$InternalSyntheticThrowCCEIfNotNull$7$c252e556c867cee1ac89fca692419e0d4b39bc94870e8b5ad42ffdb21485a953$0
-xyz.luan.audioplayers.AudioContextAndroid:
-    private final int getStreamType()
-xyz.luan.audioplayers.player.SoundPoolManager:
-    private xyz.luan.audioplayers.player.SoundPoolWrapper legacySoundPoolWrapper

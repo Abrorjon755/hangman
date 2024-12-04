@@ -128,10 +128,10 @@ flutter_launcher_icons:
   background_color_ios: "#000000"
 
 flutter_native_splash:
-  color: "#b86914"
-  color_dark: "b86914"
-  color_android: "#b86914"
-  color_ios: "#b86914"
+  color: "#000000"
+  color_dark: "000000"
+  color_android: "#000000"
+  color_ios: "#000000"
   image: assets/images/splash.png
   image_dark: assets/images/splash.png
   android_12:

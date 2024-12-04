@@ -135,35 +135,6 @@
 -keep class dev.abrorjon755.hangman.MainActivity { <init>(); }
 
 # End of content from C:\Users\abror\StudioProjects\hangman\build\app\intermediates\aapt_proguard_file\release\aapt_rules.txt
-# The proguard configuration file for the following section is C:\Users\abror\.gradle\caches\transforms-3\3e108fe9d597d03770ae82acaebb5b63\transformed\jetified-window-1.2.0\proguard.txt
-# Copyright (C) 2020 The Android Open Source Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-# A rule that will keep classes that implement SidecarInterface$SidecarCallback if Sidecar seems
-# be used. See b/157286362 and b/165268619 for details.
-# TODO(b/208543178) investigate how to pass header jar to R8 so we don't need this rule
--if class androidx.window.layout.adapter.sidecar.SidecarCompat {
-  public *** setExtensionCallback(androidx.window.layout.adapter.sidecar.ExtensionInterfaceCompat$ExtensionCallbackInterface);
-}
--keep class androidx.window.layout.adapter.sidecar.SidecarCompat$TranslatingCallback,
- androidx.window.layout.adapter.sidecar.DistinctElementSidecarCallback {
-  public *** onDeviceStateChanged(androidx.window.sidecar.SidecarDeviceState);
-  public *** onWindowLayoutChanged(android.os.IBinder, androidx.window.sidecar.SidecarWindowLayoutInfo);
-}
-# Required for window area API reflection guard
--keep interface androidx.window.area.reflectionguard.* {*;}
-# End of content from C:\Users\abror\.gradle\caches\transforms-3\3e108fe9d597d03770ae82acaebb5b63\transformed\jetified-window-1.2.0\proguard.txt
 # The proguard configuration file for the following section is C:\Users\abror\.gradle\caches\transforms-3\a49cd171355a6a39687e69f028c8bcbc\transformed\fragment-1.7.1\proguard.txt
 # Copyright (C) 2020 The Android Open Source Project
 #
@@ -196,6 +167,35 @@
 }
 
 # End of content from C:\Users\abror\.gradle\caches\transforms-3\a49cd171355a6a39687e69f028c8bcbc\transformed\fragment-1.7.1\proguard.txt
+# The proguard configuration file for the following section is C:\Users\abror\.gradle\caches\transforms-3\3e108fe9d597d03770ae82acaebb5b63\transformed\jetified-window-1.2.0\proguard.txt
+# Copyright (C) 2020 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# A rule that will keep classes that implement SidecarInterface$SidecarCallback if Sidecar seems
+# be used. See b/157286362 and b/165268619 for details.
+# TODO(b/208543178) investigate how to pass header jar to R8 so we don't need this rule
+-if class androidx.window.layout.adapter.sidecar.SidecarCompat {
+  public *** setExtensionCallback(androidx.window.layout.adapter.sidecar.ExtensionInterfaceCompat$ExtensionCallbackInterface);
+}
+-keep class androidx.window.layout.adapter.sidecar.SidecarCompat$TranslatingCallback,
+ androidx.window.layout.adapter.sidecar.DistinctElementSidecarCallback {
+  public *** onDeviceStateChanged(androidx.window.sidecar.SidecarDeviceState);
+  public *** onWindowLayoutChanged(android.os.IBinder, androidx.window.sidecar.SidecarWindowLayoutInfo);
+}
+# Required for window area API reflection guard
+-keep interface androidx.window.area.reflectionguard.* {*;}
+# End of content from C:\Users\abror\.gradle\caches\transforms-3\3e108fe9d597d03770ae82acaebb5b63\transformed\jetified-window-1.2.0\proguard.txt
 # The proguard configuration file for the following section is C:\Users\abror\.gradle\caches\transforms-3\52dfd6d7c21c1e36dbdf0d304093d642\transformed\lifecycle-viewmodel-2.7.0\proguard.txt
 -keepclassmembers,allowobfuscation class * extends androidx.lifecycle.ViewModel {
     <init>();
@@ -388,7 +388,7 @@
   public *** apply(***);
 }
 # End of content from C:\Users\abror\.gradle\caches\transforms-3\6dde453803d512b3f23cc981e264e9e0\transformed\jetified-core-1.0.0\proguard.txt
-# The proguard configuration file for the following section is C:\Users\abror\.gradle\caches\transforms-3\2c26ddf817d41a14de967d5fd8c3211f\transformed\rules\lib\META-INF\proguard\androidx-annotations.pro
+# The proguard configuration file for the following section is C:\Users\abror\.gradle\caches\transforms-3\c36c8a96751754a8e3abe9d0e16093c7\transformed\rules\lib\META-INF\proguard\androidx-annotations.pro
 -keep,allowobfuscation @interface androidx.annotation.Keep
 -keep @androidx.annotation.Keep class * {*;}
 
@@ -408,7 +408,7 @@
   @androidx.annotation.DoNotInline <methods>;
 }
 
-# End of content from C:\Users\abror\.gradle\caches\transforms-3\2c26ddf817d41a14de967d5fd8c3211f\transformed\rules\lib\META-INF\proguard\androidx-annotations.pro
+# End of content from C:\Users\abror\.gradle\caches\transforms-3\c36c8a96751754a8e3abe9d0e16093c7\transformed\rules\lib\META-INF\proguard\androidx-annotations.pro
 # The proguard configuration file for the following section is <unknown>
 
 # End of content from <unknown>

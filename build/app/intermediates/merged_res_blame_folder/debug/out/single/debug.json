@@ -1,15 +1,19 @@
 [
     {
-        "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-hdpi_android12splash.png.flat",
-        "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-hdpi\\android12splash.png"
-    },
-    {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-xxxhdpi_splash.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-xxxhdpi\\splash.png"
     },
     {
+        "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-hdpi_android12splash.png.flat",
+        "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-hdpi\\android12splash.png"
+    },
+    {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-night-v21_background.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-night-v21\\background.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-night-v21_background.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-night-v21/background.png"
     },
     {
         "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-xhdpi_android12splash.png.flat",
@@ -28,6 +32,10 @@
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
         "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-night-xhdpi_splash.png.flat",
         "source": "dev.abrorjon755.hangman.app-main-23:/drawable-night-xhdpi/splash.png"
     },
@@ -36,16 +44,20 @@
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-xhdpi\\splash.png"
     },
     {
-        "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-xhdpi_ic_launcher_monochrome.png.flat",
-        "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-xhdpi\\ic_launcher_monochrome.png"
-    },
-    {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-hdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-hdpi\\ic_launcher_background.png"
     },
     {
+        "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-xhdpi_ic_launcher_monochrome.png.flat",
+        "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-xhdpi\\ic_launcher_monochrome.png"
+    },
+    {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-xxxhdpi_ic_launcher_monochrome.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-xxxhdpi\\ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-xxhdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-xxhdpi_android12splash.png.flat",
@@ -84,12 +96,24 @@
         "source": "dev.abrorjon755.hangman.app-main-23:/drawable-xxxhdpi/splash.png"
     },
     {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
         "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-night-hdpi_android12splash.png.flat",
         "source": "dev.abrorjon755.hangman.app-main-23:/drawable-night-hdpi/android12splash.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-mdpi_ic_launcher_foreground.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-xxxhdpi_ic_launcher_monochrome.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-xxxhdpi/ic_launcher_monochrome.png"
     },
     {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-night-xhdpi_splash.png.flat",
@@ -108,6 +132,10 @@
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-night-xxxhdpi\\splash.png"
     },
     {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-hdpi/ic_launcher_background.png"
+    },
+    {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-xxhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-xxhdpi\\ic_launcher_foreground.png"
     },
@@ -118,6 +146,10 @@
     {
         "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-xxhdpi_splash.png.flat",
         "source": "dev.abrorjon755.hangman.app-main-23:/drawable-xxhdpi/splash.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-xhdpi/ic_launcher_background.png"
     },
     {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -152,6 +184,14 @@
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-night-mdpi\\splash.png"
     },
     {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-xxhdpi_ic_launcher_monochrome.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-xxhdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-xxxhdpi/ic_launcher_background.png"
+    },
+    {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-night-xhdpi_android12splash.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-night-xhdpi\\android12splash.png"
     },
@@ -164,12 +204,12 @@
         "source": "dev.abrorjon755.hangman.app-main-23:/drawable-night-mdpi/splash.png"
     },
     {
-        "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-mdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-mdpi\\ic_launcher_foreground.png"
-    },
-    {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-mdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-mdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-mdpi_android12splash.png.flat",
@@ -182,6 +222,14 @@
     {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-night-xxhdpi_android12splash.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-night-xxhdpi\\android12splash.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-xxxhdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-night-hdpi_splash.png.flat",
@@ -204,6 +252,10 @@
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-hdpi\\splash.png"
     },
     {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-mdpi_ic_launcher_monochrome.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-mdpi/ic_launcher_monochrome.png"
+    },
+    {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-night-hdpi_android12splash.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-night-hdpi\\android12splash.png"
     },
@@ -216,12 +268,20 @@
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-mdpi\\splash.png"
     },
     {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
         "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-hdpi_splash.png.flat",
         "source": "dev.abrorjon755.hangman.app-main-23:/drawable-hdpi/splash.png"
     },
     {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-v21_background.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-v21\\background.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-hdpi_ic_launcher_foreground.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-hdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-xxxhdpi_android12splash.png.flat",
@@ -236,8 +296,20 @@
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-xxhdpi\\splash.png"
     },
     {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-xxhdpi/ic_launcher_background.png"
+    },
+    {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-xxhdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/mipmap-mdpi/ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-night-mdpi_android12splash.png.flat",
@@ -252,11 +324,27 @@
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-v21_background.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-v21/background.png"
+    },
+    {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\drawable-v21_launch_background.xml.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\drawable-v21\\launch_background.xml"
     },
     {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-hdpi_ic_launcher_monochrome.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-hdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-xhdpi_ic_launcher_monochrome.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-xhdpi/ic_launcher_monochrome.png"
+    },
+    {
         "merged": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-main-23:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "dev.abrorjon755.hangman.app-merged_res-28:/drawable-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "dev.abrorjon755.hangman.app-main-23:/drawable-xhdpi/ic_launcher_foreground.png"
     }
 ]

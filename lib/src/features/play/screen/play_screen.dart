@@ -70,21 +70,6 @@ class _PlayScreenState extends State<PlayScreen> {
                   ),
                   const Spacer(),
                   ZoomTapAnimation(
-                    child: MyPatternBox(
-                      child: SizedBox.square(
-                        dimension: 45,
-                        child: Center(
-                          child: FaIcon(
-                            FontAwesomeIcons.pause,
-                            color: context.colors.onSecondaryContainer,
-                            size: 25,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 20),
-                  ZoomTapAnimation(
                     onTap: showSettingsDialog,
                     child: MyPatternBox(
                       child: SizedBox.square(
@@ -133,7 +118,7 @@ class _PlayScreenState extends State<PlayScreen> {
                               ? Center(
                                   child: SizedBox.square(
                                     dimension:
-                                        constraints.biggest.height / 2 - 8,
+                                        constraints.biggest.height / 2 - 7,
                                     child: state.errorWords.length >= 5
                                         ? Padding(
                                             padding: const EdgeInsets.all(28.0),

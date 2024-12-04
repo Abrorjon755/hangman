@@ -53,7 +53,7 @@
 37        android:extractNativeLibs="true"
 38        android:icon="@mipmap/ic_launcher"
 38-->C:\Users\abror\StudioProjects\hangman\android\app\src\main\AndroidManifest.xml:8:9-43
-39        android:label="hangman"
+39        android:label="Hangman"
 39-->C:\Users\abror\StudioProjects\hangman\android\app\src\main\AndroidManifest.xml:6:9-32
 40        android:usesCleartextTraffic="true" >
 40-->C:\Users\abror\StudioProjects\hangman\android\app\src\main\AndroidManifest.xml:4:9-44

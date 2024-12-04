@@ -55,7 +55,7 @@
 41        android:enableOnBackInvokedCallback="true"
 42        android:extractNativeLibs="true"
 43        android:icon="@mipmap/ic_launcher"
-44        android:label="hangman"
+44        android:label="Hangman - Puzzle Game"
 45        android:usesCleartextTraffic="true" >
 46        <activity
 47            android:name="dev.abrorjon755.hangman.MainActivity"

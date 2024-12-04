@@ -1,6 +1,30 @@
 {
     "logs": [
         {
+            "outputFile": "dev.abrorjon755.hangman.app-merged_res-28:/values-v31_values-v31.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\abror\\StudioProjects\\hangman\\android\\app\\src\\main\\res\\values-v31\\styles.xml",
+                    "from": {
+                        "startLines": "3,-1",
+                        "startColumns": "4,-1",
+                        "startOffsets": "173,-1",
+                        "endLines": "10,-1",
+                        "endColumns": "12,-1",
+                        "endOffsets": "696,-1"
+                    },
+                    "to": {
+                        "startLines": "2,10",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,583",
+                        "endLines": "9,12",
+                        "endColumns": "12,12",
+                        "endOffsets": "578,747"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "C:\\Users\\abror\\.gradle\\daemon\\8.3\\dev.abrorjon755.hangman.app-merged_res-28:\\values-sw_values-sw.arsc.flat",
             "map": [
                 {
@@ -1129,6 +1153,30 @@
                         "startOffsets": "55,152,262,364,465,572,677,796",
                         "endColumns": "96,109,101,100,106,104,118,100",
                         "endOffsets": "147,257,359,460,567,672,791,892"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "dev.abrorjon755.hangman.app-merged_res-28:/values-night-v31_values-night-v31.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\abror\\StudioProjects\\hangman\\android\\app\\src\\main\\res\\values-night-v31\\styles.xml",
+                    "from": {
+                        "startLines": "3,-1",
+                        "startColumns": "4,-1",
+                        "startOffsets": "172,-1",
+                        "endLines": "10,-1",
+                        "endColumns": "12,-1",
+                        "endOffsets": "695,-1"
+                    },
+                    "to": {
+                        "startLines": "2,10",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,583",
+                        "endLines": "9,12",
+                        "endColumns": "12,12",
+                        "endOffsets": "578,747"
                     }
                 }
             ]
